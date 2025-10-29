@@ -25,10 +25,11 @@ docker-compose exec app bash
 # ou rodar comandos direto: docker-compose exec app php artisan migrate
 ```
 
-4. Rodar migrations e seeders (se houver):
+4. Rodar migrations e seeders:
 
 ```powershell
 docker-compose exec app php artisan migrate
+docker-compose exec app php artisan db:seed
 ```
 
 5. Rodar o laravel em uma porta
@@ -43,7 +44,7 @@ Autenticação (JWT)
 - Fazer login:
 
     POST /api/login
-    Body: { "email": "...", "password": "..." }
+    Body: { "email": "admin@example.com", "password": "senha123" }
 
     Resposta: { "token": "...", "token_type": "Bearer" }
 
@@ -101,7 +102,6 @@ Dicas e troubleshooting
 Mais
 
 - O `User` model e o `config/auth.php` foram ajustados para suportar JWT conforme instruções no projeto.
-- Se quiser que eu adicione exemplos de chamadas usando `axios` / Inertia.js ou atualizar outros docs, me diga o formato desejado.
 
 --
 README gerado/atualizado automaticamente pelo time de desenvolvimento — inclui instruções de JWT e SoftDeletes.
