@@ -80,25 +80,7 @@ curl -X DELETE http://localhost:8000/api/patients/1 \
 	-H "Accept: application/json" -i
 ```
 
-- Restaurar paciente:
-
-```bash
-curl -X PUT http://localhost:8000/api/patients/1/restore \
-	-H "Authorization: Bearer <TOKEN>" -H "Accept: application/json" -i
-```
-
-- Forçar remoção permanente:
-
-```bash
-curl -X DELETE http://localhost:8000/api/patients/1/force \
-	-H "Authorization: Bearer <TOKEN>" -H "Accept: application/json" -i
-```
-
 Dicas e troubleshooting
-- Se o DELETE não alterar `deleted_at`:
-	- Verifique se o registro existe (uma requisição para um id inexistente retorna 404 e nada será deletado).
-	- Certifique-se de enviar o método HTTP DELETE (abrir a URL no browser faz um GET).
-	- Verifique autenticação (routes são protegidas por `auth:api`). Um 401/403 significa que a requisição foi bloqueada antes do controller.
 
 - Se estiver usando `docker-compose`, defina `DB_HOST=db` no seu `.env` (o serviço chama-se `db` no compose).
 
