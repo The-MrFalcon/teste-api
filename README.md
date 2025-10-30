@@ -14,11 +14,11 @@ Rodando localmente (com Docker)
 
 1.5 Após isso, utilize o seguinte comando
 
-    ```powershell
-    composer install
-    npm install
-    php artisan key:generate
-    ```
+```powershell
+composer install
+npm install
+php artisan key:generate
+```
 
 2.  Subir containers:
 
