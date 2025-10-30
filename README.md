@@ -38,8 +38,9 @@ docker-compose exec app php artisan db:seed
 php artisan serve
 ```
 
-
 Autenticação (JWT)
+
+Utilizar a porta http://localhost:8000
 
 - Fazer login:
 
@@ -84,7 +85,7 @@ Exemplos de teste (curl)
 ```bash
 curl -s -X POST http://localhost:8000/api/login \
 	-H "Content-Type: application/json" \
-	-d '{"email":"admin@example.com","password":"password"}'
+	-d '{"email":"admin@example.com","password":"senha123"}'
 ```
 
 - Deletar (soft delete) paciente — requer token Bearer:
