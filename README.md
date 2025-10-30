@@ -10,9 +10,14 @@ Visão geral
 
 Rodando localmente (com Docker)
 
-1. Copie/ajuste `.env` (ex.: `cp .env.example .env`) e confirme as variáveis de ambiente.
-    - Se rodando com `docker-compose`, defina `DB_HOST=db` no `.env` (o serviço do compose se chama `db`).
-2. Subir containers:
+1.  Copie/ajuste `.env` (ex.: `cp .env.example .env`) e confirme as variáveis de ambiente. - Se rodando com `docker-compose`, defina `DB_HOST=db` no `.env` (o serviço do compose se chama `db`).
+    Após isso, utilize o seguinte comando
+
+    ```powershell
+    php artisan key:generate
+    ```
+
+2.  Subir containers:
 
 ```powershell
 docker-compose up -d --build
