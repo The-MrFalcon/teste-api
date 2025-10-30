@@ -11,9 +11,12 @@ Visão geral
 Rodando localmente (com Docker)
 
 1.  Copie/ajuste `.env` (ex.: `cp .env.example .env`) e confirme as variáveis de ambiente. - Se rodando com `docker-compose`, defina `DB_HOST=db` no `.env` (o serviço do compose se chama `db`).
-    Após isso, utilize o seguinte comando
+
+1.5 Após isso, utilize o seguinte comando
 
     ```powershell
+    composer install
+    npm install
     php artisan key:generate
     ```
 
@@ -23,24 +26,11 @@ Rodando localmente (com Docker)
 docker-compose up -d --build
 ```
 
-3. Acessar o container da aplicação para rodar comandos (opcional):
-
-```powershell
-docker-compose exec app bash
-# ou rodar comandos direto: docker-compose exec app php artisan migrate
-```
-
-4. Rodar migrations e seeders:
+3. Rodar migrations e seeders:
 
 ```powershell
 docker-compose exec app php artisan migrate
 docker-compose exec app php artisan db:seed
-```
-
-5. Rodar o laravel em uma porta
-
-```powershell
-php artisan serve
 ```
 
 Autenticação (JWT)
